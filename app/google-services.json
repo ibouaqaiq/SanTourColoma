@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "742434631432",
+    "firebase_url": "https://santourcoloma.firebaseio.com",
+    "project_id": "santourcoloma",
+    "storage_bucket": "santourcoloma.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:742434631432:android:46eeabcd3182692a",
+        "android_client_info": {
+          "package_name": "com.example.issam.santourcoloma"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "742434631432-ubovd7r5m6km6sst465dma3uk88r31g8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.issam.santourcoloma",
+            "certificate_hash": "88fdeb7c49e5737a28e3092d5f7c440219f1834f"
+          }
+        },
+        {
+          "client_id": "742434631432-cln67ccj2b9njd4p6qnql27hbk9bhffa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKLnbpXbhW8KBL-50Uj-1q-eCz-ahjRq0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "742434631432-cln67ccj2b9njd4p6qnql27hbk9bhffa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
