@@ -1,8 +1,10 @@
-package com.example.issam.santourcoloma;
+package com.example.issam.santourcoloma.View;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
 
+import com.example.issam.santourcoloma.R;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -29,15 +31,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
+        //mMap.setMaxZoomPreference(15);
+        mMap.setMinZoomPreference(14.0f);
         // Add a marker in Sydney and move the camera
-        LatLng santaColoma = new LatLng(41.44458789999999, 2.2103217000000086);
+        LatLng santaColoma = new LatLng(41.452808, 2.208545);
         mMap.addMarker(new MarkerOptions().position(santaColoma).title("Marker in SantaColoma"));
 
         CameraPosition camera = new CameraPosition.Builder()
                 .target(santaColoma)
-                .zoom(13)
-
+                .zoom(10)
+                .bearing(325)
                 .build();
 
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(camera));
