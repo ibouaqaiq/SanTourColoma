@@ -34,15 +34,13 @@
             android:name=".View.MapsActivity"
             android:label="@string/title_activity_maps"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".View.SignInActivity">
+        <activity android:name=".View.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".View.LoginActivity" />
-        <activity android:name=".View.ResetPasswordActivity"></activity>
     </application>
 
 </manifest>

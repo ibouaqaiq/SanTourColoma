@@ -1,21 +1,29 @@
 {
   "project_info": {
-    "project_number": "742434631432",
-    "firebase_url": "https://santourcoloma.firebaseio.com",
-    "project_id": "santourcoloma",
-    "storage_bucket": "santourcoloma.appspot.com"
+    "project_number": "830826710663",
+    "firebase_url": "https://santourcoloma-369f5.firebaseio.com",
+    "project_id": "santourcoloma-369f5",
+    "storage_bucket": "santourcoloma-369f5.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:742434631432:android:46eeabcd3182692a",
+        "mobilesdk_app_id": "1:830826710663:android:46eeabcd3182692a",
         "android_client_info": {
           "package_name": "com.example.issam.santourcoloma"
         }
       },
       "oauth_client": [
         {
-          "client_id": "742434631432-ubovd7r5m6km6sst465dma3uk88r31g8.apps.googleusercontent.com",
+          "client_id": "830826710663-o5j2voof4mpuvlkdm3klr7bs1r9ff12p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.issam.santourcoloma",
+            "certificate_hash": "384ab1b3e1a6bdf42fc8126f1517a9cd476d1114"
+          }
+        },
+        {
+          "client_id": "830826710663-lrti7ovja61ijlgqr3vb9tdqesbek93u.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.issam.santourcoloma",
@@ -23,13 +31,13 @@
           }
         },
         {
-          "client_id": "742434631432-cln67ccj2b9njd4p6qnql27hbk9bhffa.apps.googleusercontent.com",
+          "client_id": "830826710663-f0c2sgfd8ougtrj0arf9sjqqi7onqak8.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBKLnbpXbhW8KBL-50Uj-1q-eCz-ahjRq0"
+          "current_key": "AIzaSyAafNhDtibeT2vHQMv9Wy1JrcQasNzoGqs"
         }
       ],
       "services": {
@@ -40,7 +48,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "742434631432-cln67ccj2b9njd4p6qnql27hbk9bhffa.apps.googleusercontent.com",
+              "client_id": "830826710663-f0c2sgfd8ougtrj0arf9sjqqi7onqak8.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
