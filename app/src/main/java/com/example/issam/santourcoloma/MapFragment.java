@@ -3,10 +3,21 @@
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
     /**
  * A simple {@link Fragment} subclass.
@@ -16,7 +27,12 @@ import android.view.ViewGroup;
  * Use the {@link MapFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MapFragment extends Fragment {
+public class MapFragment extends Fragment implements OnMapReadyCallback {
+
+    private GoogleMap mMap;
+    private View rootView;
+    private MapView mapView;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -62,11 +78,19 @@ public class MapFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_map, container, false);
+       rootView = inflater.inflate(R.layout.fragment_map, container, false);
+
+        return rootView;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
+        @Override
+        public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+            super.onViewCreated(view, savedInstanceState);
+            SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map1);
+            mapFragment.getMapAsync(this);
+        }
+
+        // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
@@ -90,7 +114,26 @@ public class MapFragment extends Fragment {
         mListener = null;
     }
 
-    /**
+        @Override
+        public void onMapReady(GoogleMap googleMap) {
+            mMap = googleMap;
+            //mMap.setMaxZoomPreference(15);
+            mMap.setMinZoomPreference(14.0f);
+            // Add a marker in Sydney and move the camera
+            LatLng santaColoma = new LatLng(41.452808, 2.208545);
+            mMap.addMarker(new MarkerOptions().position(santaColoma).title("Marker in SantaColoma"));
+
+            CameraPosition camera = new CameraPosition.Builder()
+                    .target(santaColoma)
+                    .zoom(10)
+                    .bearing(325)
+                    .build();
+
+            mMap.animateCamera(CameraUpdateFactory.newCameraPosition(camera));
+            //mMap.moveCamera(CameraUpdateFactory.newLatLng(santaColoma));
+        }
+
+        /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
      * to the activity and potentially other fragments contained in that
