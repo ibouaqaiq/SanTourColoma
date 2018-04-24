@@ -50,9 +50,6 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    /*
-    TODO: Reparar inicio de sesion obsoleto
-     */
     void signIn(){
         startActivityForResult(
                 AuthUI.getInstance().createSignInIntentBuilder()
