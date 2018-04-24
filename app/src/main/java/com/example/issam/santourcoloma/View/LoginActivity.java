@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
                     .child(userId)
                     .setValue(new User(userId, firebaseUser.getDisplayName(), firebaseUser.getEmail(), firebaseUser.getPhotoUrl().toString()));
 
-            startActivity(new Intent(this, MapsActivity.class));
+            startActivity(new Intent(this, MainActivity.class));
             finish();
         }
     }
