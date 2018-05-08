@@ -8,14 +8,17 @@
     tools:context=".View.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
+
+
     <LinearLayout
         android:id="@+id/mainLayout"
-        android:layout_width="375dp"
-        android:layout_height="503dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="-70dp">
+
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

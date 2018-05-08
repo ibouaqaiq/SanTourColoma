@@ -31,12 +31,17 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:12.0.1'
 
     //Firebase plugins
+    implementation 'com.firebaseui:firebase-ui-auth:3.3.1'
+    implementation 'com.firebaseui:firebase-ui-database:3.3.1'
+    implementation 'com.firebaseui:firebase-ui-storage:3.3.1'
+
     implementation 'com.google.firebase:firebase-core:12.0.1'
     implementation 'com.google.firebase:firebase-database:12.0.1'
     implementation 'com.google.firebase:firebase-auth:12.0.1'
     implementation 'com.firebaseui:firebase-ui-auth:3.3.0'
 
     implementation 'com.android.support:support-v4:26.1.0'
+    implementation 'com.android.support:design:26.1.0'
 
 }
 

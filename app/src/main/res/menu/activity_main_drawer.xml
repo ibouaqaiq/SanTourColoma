@@ -9,7 +9,22 @@
             android:icon="@android:drawable/ic_dialog_map"
             android:title="Mapa" />
 
+        <item
+            android:id="@+id/item_sitios"
+            android:icon="@drawable/ic_ubicacion"
+            android:title="Sitios"
+            />
     </group>
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_signout"
+                android:icon="@drawable/signout"
+                android:title="Sign Out" />
+
+        </menu>
+    </item>
 
 
 </menu>

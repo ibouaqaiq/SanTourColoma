@@ -34,7 +34,7 @@
     <string name="lbl_forgot_password">Forgot password?</string>
     <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_title">SanTourColoma</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
 
