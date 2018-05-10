@@ -1,6 +1,7 @@
 package com.example.issam.santourcoloma.Fragments;
 
 
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -63,17 +65,26 @@ public abstract class SitiosFragment extends Fragment {
             protected void onBindViewHolder(final SitioViewHolder viewHolder, int position, final Sitio sitio) {
                 final String postKey = getRef(position).getKey();
 
+                viewHolder.
+
 
             }
         };
     }
 
     class SitioViewHolder extends RecyclerView.ViewHolder {
-        TextView nombre;
+        TextView nombresitio;
+        Image fotositio;
+        ImageButton fav;
+        String short_desc;
 
         SitioViewHolder(View view){
             super(view);
-            //nombre = view.findViewById(R.id.nombre);
+            nombresitio = view.findViewById(R.id.nombresitio);
+            fotositio = view.findViewById(R.id.fotositio);
+            fav = view.findViewById(R.id.fav);
+            short_desc = view.findViewById(R.id.short_desc);
+
         }
 
     }
