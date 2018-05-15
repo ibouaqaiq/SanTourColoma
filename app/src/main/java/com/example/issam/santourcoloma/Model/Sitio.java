@@ -1,20 +1,17 @@
 package com.example.issam.santourcoloma.Model;
 
-import android.media.Image;
-import android.widget.ImageButton;
-
 public class Sitio {
-    public String nombresitio;
-    public Image fotositio;
-    public ImageButton fav;
-    public String short_desc;
+    public String nombreSitio;
+    public int fotoSitioId;
+    public boolean fav;
+    public String shortDesc;
 
     public Sitio(){}
 
-    public Sitio(String nombresitio, Image fotositio, ImageButton fav, String short_desc) {
-        this.nombresitio = nombresitio;
-        this.fotositio = fotositio;
+    public Sitio(String nombreSitio, int fotoSitioId, boolean fav, String shortDesc) {
+        this.nombreSitio = nombreSitio;
+        this.fotoSitioId = fotoSitioId;
         this.fav = fav;
-        this.short_desc = short_desc;
+        this.shortDesc = shortDesc;
     }
 }

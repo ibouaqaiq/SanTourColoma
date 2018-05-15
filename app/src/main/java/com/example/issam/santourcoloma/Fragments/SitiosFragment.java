@@ -1,7 +1,6 @@
 package com.example.issam.santourcoloma.Fragments;
 
 
-import android.media.Image;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,9 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.example.issam.santourcoloma.Model.Sitio;
 import com.example.issam.santourcoloma.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -50,7 +48,7 @@ public abstract class SitiosFragment extends Fragment {
 
     FirebaseRecyclerAdapter<Sitio, SitioViewHolder> getAdapter(){
         FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder<Sitio>()
-                .setIndexedQuery(setQuery(), FirebaseDatabase.getInstance().getReference().child("posts/data"), Sitio.class)
+                .setIndexedQuery(setQuery(), FirebaseDatabase.getInstance().getReference().child("sitios/data"), Sitio.class)
                 .setLifecycleOwner(this)
                 .build();
 
@@ -65,8 +63,17 @@ public abstract class SitiosFragment extends Fragment {
             protected void onBindViewHolder(final SitioViewHolder viewHolder, int position, final Sitio sitio) {
                 final String postKey = getRef(position).getKey();
 
-                viewHolder.
+                System.out.println("SITIOOOOOO " + sitio.nombreSitio);
+                viewHolder.nombresitio.setText(sitio.nombreSitio);
+                //viewHolder.fotositio.setText(sitio.fotoSitioId);
+                if(sitio.fav){
+                    viewHolder.fav.setImageResource(R.drawable.heart_on);
+                    } else  {
+                    viewHolder.fav.setImageResource(R.drawable.heart_off);
 
+               }
+
+                viewHolder.short_desc.setText(sitio.shortDesc);
 
             }
         };
@@ -74,16 +81,16 @@ public abstract class SitiosFragment extends Fragment {
 
     class SitioViewHolder extends RecyclerView.ViewHolder {
         TextView nombresitio;
-        Image fotositio;
-        ImageButton fav;
-        String short_desc;
+        ImageView fotositio;
+        ImageView fav;
+        TextView short_desc;
 
         SitioViewHolder(View view){
             super(view);
-            nombresitio = view.findViewById(R.id.nombresitio);
+            nombresitio = view.findViewById(R.id.nombreSitio);
             fotositio = view.findViewById(R.id.fotositio);
             fav = view.findViewById(R.id.fav);
-            short_desc = view.findViewById(R.id.short_desc);
+            short_desc = view.findViewById(R.id.shortDesc);
 
         }
 
