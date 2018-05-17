@@ -1,6 +1,7 @@
 package com.example.issam.santourcoloma.View;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -14,6 +15,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -53,7 +56,11 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+        //barra transparente
+        Window w= getWindow();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
+            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_ATTACHED_IN_DECOR,WindowManager.LayoutParams.FLAG_LAYOUT_ATTACHED_IN_DECOR);
+        }
 
         String uid = FirebaseAuth.getInstance().getUid();
 
@@ -84,7 +91,7 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         /* Load user info in drawer header*/
@@ -117,13 +124,24 @@ public class MainActivity extends AppCompatActivity
 
         getSupportFragmentManager().beginTransaction().replace(R.id.mainLayout, new MapsFragment()).commit();
 
-        //loadSitios();
+        loadSitios();
     }
 
     void loadSitios(){
         String key = mDatabase.child("sitios/data").push().getKey();
+        mDatabase.child("sitios/data").child(key).setValue(new Sitio("Ayunta",4,true,"el ayntamienttoooo", "45.45845345", "2.3244324"));
+        mDatabase.child("sitios/all").child(key).setValue(true);
 
-        mDatabase.child("sitios/data").child(key).setValue(new Sitio("Ayunta",4,true,"el ayntamienttoooo"));
+        key = mDatabase.child("sitios/data").push().getKey();
+        mDatabase.child("sitios/data").child(key).setValue(new Sitio("iglesia",4,true,"el ayntamienttoooo", "45.45845345", "2.3244324"));
+        mDatabase.child("sitios/all").child(key).setValue(true);
+
+        key = mDatabase.child("sitios/data").push().getKey();
+        mDatabase.child("sitios/data").child(key).setValue(new Sitio("museo",4,true,"el ayntamienttoooo", "45.45845345", "2.3244324"));
+        mDatabase.child("sitios/all").child(key).setValue(true);
+
+        key = mDatabase.child("sitios/data").push().getKey();
+        mDatabase.child("sitios/data").child(key).setValue(new Sitio("parque",4,true,"el ayntamienttoooo", "45.45845345", "2.3244324"));
         mDatabase.child("sitios/all").child(key).setValue(true);
     }
 
