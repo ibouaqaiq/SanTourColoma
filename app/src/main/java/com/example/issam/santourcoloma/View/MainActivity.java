@@ -129,19 +129,19 @@ public class MainActivity extends AppCompatActivity
 
     void loadSitios(){
         String key = mDatabase.child("sitios/data").push().getKey();
-        mDatabase.child("sitios/data").child(key).setValue(new Sitio("Ayunta",4,true,"el ayntamienttoooo", "45.45845345", "2.3244324"));
+        mDatabase.child("sitios/data").child(key).setValue(new Sitio("Ayunta",4,"el ayntamienttoooo", "45.45845345", "2.3244324"));
         mDatabase.child("sitios/all").child(key).setValue(true);
 
         key = mDatabase.child("sitios/data").push().getKey();
-        mDatabase.child("sitios/data").child(key).setValue(new Sitio("iglesia",4,true,"el ayntamienttoooo", "45.45845345", "2.3244324"));
+        mDatabase.child("sitios/data").child(key).setValue(new Sitio("iglesia",4,"el ayntamienttoooo", "45.45845345", "2.3244324"));
         mDatabase.child("sitios/all").child(key).setValue(true);
 
         key = mDatabase.child("sitios/data").push().getKey();
-        mDatabase.child("sitios/data").child(key).setValue(new Sitio("museo",4,true,"el ayntamienttoooo", "45.45845345", "2.3244324"));
+        mDatabase.child("sitios/data").child(key).setValue(new Sitio("museo",4,"el ayntamienttoooo", "45.45845345", "2.3244324"));
         mDatabase.child("sitios/all").child(key).setValue(true);
 
         key = mDatabase.child("sitios/data").push().getKey();
-        mDatabase.child("sitios/data").child(key).setValue(new Sitio("parque",4,true,"el ayntamienttoooo", "45.45845345", "2.3244324"));
+        mDatabase.child("sitios/data").child(key).setValue(new Sitio("parque",4,"el ayntamienttoooo", "45.45845345", "2.3244324"));
         mDatabase.child("sitios/all").child(key).setValue(true);
     }
 

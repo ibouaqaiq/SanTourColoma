@@ -9,10 +9,9 @@ public class Sitio {
 
     public Sitio(){}
 
-    public Sitio(String nombreSitio, int fotoSitioId, boolean fav, String shortDesc, String latitud, String longitud) {
+    public Sitio(String nombreSitio, int fotoSitioId, String shortDesc, String latitud, String longitud) {
         this.nombreSitio = nombreSitio;
         this.fotoSitioId = fotoSitioId;
-        this.fav = fav;
         this.shortDesc = shortDesc;
         this.latitud = latitud;
         this.longitud = longitud;
