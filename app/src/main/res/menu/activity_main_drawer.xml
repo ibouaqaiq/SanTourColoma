@@ -14,17 +14,15 @@
             android:icon="@drawable/ic_ubicacion"
             android:title="Sitios"
             />
+
+        <item
+            android:id="@+id/nav_signout"
+            android:icon="@drawable/signout"
+            android:title="Sign Out" />
+
     </group>
 
-    <item android:title="">
-        <menu>
-            <item
-                android:id="@+id/nav_signout"
-                android:icon="@drawable/signout"
-                android:title="Sign Out" />
 
-        </menu>
-    </item>
 
 
 </menu>

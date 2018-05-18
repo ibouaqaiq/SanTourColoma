@@ -2,6 +2,7 @@ package com.example.issam.santourcoloma.Fragments;
 
 
 import android.content.Context;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -45,6 +46,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
         View rootView = inflater.inflate(R.layout.fragment_maps, container, false);
 
         return rootView;
+
     }
 
     @Override

@@ -16,6 +16,7 @@ import com.example.issam.santourcoloma.Model.Sitio;
 import com.example.issam.santourcoloma.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 
@@ -66,12 +67,15 @@ public abstract class SitiosFragment extends Fragment {
                 System.out.println("SITIOOOOOO " + sitio.nombreSitio);
                 viewHolder.nombresitio.setText(sitio.nombreSitio);
                 //viewHolder.fotositio.setText(sitio.fotoSitioId);
+
                 if(sitio.fav){
                     viewHolder.fav.setImageResource(R.drawable.heart_on);
                     } else  {
                     viewHolder.fav.setImageResource(R.drawable.heart_off);
 
-               }
+                }
+
+
 
                 viewHolder.short_desc.setText(sitio.shortDesc);
 
