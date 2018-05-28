@@ -1,0 +1,202 @@
+[
+  {
+    "nombre": "Ayuntamiento y Plaza de la Vila",
+    "descLarga":"El primer núcleo de edificios, conocido como Casa de la Villa o Ayuntamiento Nuevo, data del año 1886 y constaba de las dependencias del gobierno municipal, junto con el juzgado-prisión y una escuela.La plaza de la Vila, con su correspondiente urbanización, surge a finales del s. XIX en los terrenos de la desaparecida masía de Can Pascali.",
+    "descCorta":"El primer núcleo de edificios, conocido como Casa de la Villa o Ayuntamiento Nuevo, data del año 1886 y constaba de las dependencias del gobierno municipal",
+    "latitud":"41.452069",
+    "longitud":"2.207955",
+    "fotos": ["Ayuntamiento.jpg" ]
+  },
+  {
+    "nombre":"Iglesia Mayor",
+    "descLarga":"Este templo dedicado a Santa Coloma (mártir), fue construido entre el 26 de mayo de 1912 cuando se puso la primera piedra y el 5 de septiembre de 1915 cuando se inauguró. Es uno de los últimos edificios de estilo neogótico que se construyeron en Cataluña entre las últimas del siglo XIX hasta los inicios del siglo XX. El templo fue proyectado y sus obras, en parte, dirigidas por Francesc d'Assís Berenguer i Mestres, íntimo colaborador del genial Gaudí con quien trabajó durante veinte y siete años. Como Berenguer no tenía el título de arquitecto, el proyecto fue firmado por Miquel Pascual i Tintorer.",
+    "descCorta":"templo dedicado a Santa Coloma (mártir) construido entre el 26 de mayo de 1912 y el 5 de septiembre de 1915",
+    "latitud":"41.453590",
+    "longitud":"2.212041",
+    "fotos":["IglesiaMayor.jpg"]
+
+  },
+  {
+    "nombre":"Jardines Ernest Lluch",
+    "descLarga":"Este parque inaugurado en 2004 sobre el terreno en el que estaba el antiguo cementerio de la ciudad, apodado por los locales como “Parque de los muertos” guarda en su interior el panteón de la familia Segarra de Canyet —de principios del s. XX y con influencias gaudinianas— y la cripta de la familia del escritor Josep M. de Sagarra, de finales del siglo XIX. “Hem d'estendre la nostra mirada prop de nosaltres, però mirant tot el planeta que volem conservar i on la immensa majoria visqui en condicions i en una llibertat que és un fi en si mateixa.” Esta frase de Ernest Lluch aparece en una placa instalada en el jardín.",
+    "descCorta":"Parque que contiene la cripta de la familia del escritor Josep M. de Sagarra",
+    "latitud":"41.455954",
+    "longitud":"2.209631",
+    "fotos":["JardiErnestLluch.jpg","CriptaSagarra.jpg"]
+
+  },
+  {
+    "nombre":"Torre Balldovina",
+    "descLarga":"Fue construida entre los siglos X y XI con la finalidad de vigilancia y protección del territorio. Aparece documentada en el año 1020 como Turris Baldoví. Entre los siglos XIII y XIV perdió el carácter militar y se añaden nuevas dependencias de carácter residencial y agrícola. No obstante la gran transformación del edificio se llevó a cabo en el siglo XVIII a manos de la familia Segarra.  Con los primeros hallazgos de cerámica ibérica localizados en las laderas del Puig Castellar en 1902, se inicia la historia del actual Museo. En 1986, el Ayuntamiento destina la Torre Balldovina como sede del Museo Municipal dedicado a custodiar y divulgar el patrimonio cultural y natural de la ciudad.  La Torre Balldovina es el único edificio románico del Barcelonés Norte que se ha mantenido íntegro hasta nuestros días.",
+    "descCorta":"Edificio romanico de aproximadamente 1000 años de antiguedad, creado para vigilar y utilizado como museo.",
+    "latitud":"41.446944",
+    "longitud":"2.209328",
+    "fotos":["TorreBalldovina.jpg","TorreBalldovina1.jpg"]
+
+  },
+  {
+    "nombre":"Puente del Besòs",
+    "descLarga":"En 1913, se comienza a construir el puente sobre el Besòs, crucial para la comunicación con Barcelona por Sant Andreu, y la nueva iglesia de Santa Coloma. Este puente se derrumbó tras un fuerte temporal en el que una crecida del rio Besòs hizo que cediera en diciembre de 1943. Posteriormente se construyó un puente más resistente.",
+    "descCorta":"Puente construido en 1913 que conecta Sant Andreu con la ciudad",
+    "latitud":"41.449211",
+    "longitud":"2.201943",
+    "fotos":["PontBesos.jpg","PontBesos1.jpg","PontBesos2.jpg","PontBesosmuerte.png"]
+
+  },
+  {
+    "nombre":"Puig Castellar",
+    "descLarga":"El Puig Castellar es un poblado íbero situado en la cima del Turó del Pollo (303m). El poblado fue descubierto en 1902 por Ferran de Sagarra, que realizó las primeras excavaciones y hallazgos, cedidas al Instituto de Estudios Catalanes. Los trabajos fueron continuados por Serra-Ràfols y posteriormente por el centro excursionista Puig Castellar. Actualmente la mayoría de los objetos descubiertos se encuentran en el Museo Torre Balldovina.",
+    "descCorta":"Poblado íbero en la montaña mas alta de Santa Coloma",
+    "latitud":"41.470168",
+    "longitud":"2.206677",
+    "fotos":["PuigCastellar.jpg", "PuigCastellar1.jpg", "PuigCastellar3.jpg"]
+
+  },
+  {
+    "nombre":"Parque fluvial del Besòs",
+    "descLarga":"El parque fluvial del Besós es un espacio gestionado por el Área de Espacios Naturales de la Diputación de Barcelona ubicado a o largo de los últimos 9 Km. del río Besós, desde la confluencia con el río Ripoll hasta la desembocadura en el mar Mediterráneo.Con una superficie total de 115 hectáreas, se trata de uno de los espacios verdes más importantes del Ámbito metropolitano de Barcelona y forma parte del continuo urbano de las ciudades de Barcelona, Santa Coloma de Gramanet, San Adrián de Besós y Moncada y Reixach. El Parque se creó mediante la ejecución del proyecto de recuperación medioambiental del tramo final del río Besós. Cada zona del parque tiene una vegetación diferente. La zona de uso público consta de 22 hectáreas de césped, y el margen derecho de esta zona del parque cuenta también con una zona más reducida de prado fluvial.",
+    "descCorta":"Parque fluvial a lo largo de los ultimos 9km del rio Besòs",
+    "latitud":"41.441071",
+    "longitud":"2.208640",
+    "fotos":["ParcFluvial.jpg","ParcFluvial1.jpg","ParcFluvial2.jpg"]
+
+  },
+  {
+    "nombre":"Auditorio Can Roig i Torres",
+    "descLarga":"Situada en el casco antiguo, es considerado el edificio más emblemático de todas las construcciones colomenses de principios de siglo. Fue construida entre 1910 y 1913 por iniciativa de Rafael Roig y Torres y ganó el premio del Ayuntamiento y la Diputación de Barcelona. La estructura de la casa es en forma de V y el centro se levanta una torre central más alta coronada con un pináculo. El edificio mezcla elementos modernistas y novecentistas. Durante años ha tenido diversos usos: hospital durante la Guerra Civil Española, sede de la Falange, escuela y, una vez adquirida por el consistorio, sede de la Escuela Municipal de Música. En 2007 se inauguró en el subsuelo del edificio el nuevo Auditorio de la ciudad.",
+    "descCorta":"Escuela municipal de música que ha tenido varios usos a lo largo de su historia.",
+    "latitud":"41.453058",
+    "longitud":"2.209344",
+    "fotos":["CanRoigiTorres.jpg","CanRoigiTorres1.jpg","CanRoigiTorres2.jpg","CanRoigiTorres3.jpg"]
+
+  },
+  {
+    "nombre":"Can Sisteré",
+    "descLarga":"Casal edificado en el siglo XIX como residencia de veraneo siguiendo la tipología de torre residencial aislada y rodeada de un jardín. En la actualidad es un centro cultural.",
+    "descCorta":"Casal edificado en el siglo XIX como residencia de veraneo, actualmente centro cultural",
+    "latitud":"41.452446",
+    "longitud":"2.207545",
+    "fotos":["CanSistere.jpg","CanSistere1.jpg"]
+
+  },
+  {
+    "nombre":"Torre Pallaresa",
+    "descLarga":"La Torre Pallaresa es uno de los edificios más representativos de la arquitectura catalana del siglo XVI, declarada monumento histórico-artístico de interés nacional en 1931. Se encuentra situada a las afueras de la ciudad, en pleno valle Carcereny. Los historiadores datan sus orígenes alrededor de la alta Edad Media. Posteriormente, a finales del siglo XIV, pasó de la familia Carcereny a manos de Jaume Pallarès (de dónde le viene el nombre). Sin embargo, en 1520 la viuda de Pallarès vendió a los Cardona. Estos últimos transformaron el viejo casal dándole la apariencia actual.",
+    "descCorta":"Edificio declarado monumento histórico-artístico de interés nacional en 1931",
+    "latitud":"41.464457",
+    "longitud":"2.217589",
+    "fotos":["TorrePallaresa.jpg","TorrePallaresa1.jpg","TorrePallaresa2.jpg","TorrePallaresa3.jpg"]
+
+  },
+  {
+    "nombre":"Parroquia de Sant Josep Oriol",
+    "descLarga":"La actual iglesia de Sant Josep Oriol ocupa el mismo emplazamiento de la primitiva iglesia románica del siglo XI, sustituida en 1761 por un nuevo templo barroco, que fue destruido en 1936. Del edificio actual, el elemento más remarcable es el presbiterio, decorado por el artista Grau Garriga, y que está presidido por un impactante tapiz de algodón en forma de cordero Esquix, que simboliza Jesucristo.",
+    "descCorta":"Iglesia dedicada a Sant Josep Oriol",
+    "latitud":"41.452746",
+    "longitud":"2.204806",
+    "fotos":["SantJosep.jpg","SantJosep2.jpg"]
+
+  },
+  {
+    "nombre":"Ermita de Sant Climent",
+    "descLarga":"Está situada en la loma de las Ermitas, en la cima de una colina, en el límite con el término de Montcada i Reixac. Se puede acceder por un camino del Puig Castellar. Tiene planta rectangular, con cabecera semicircular, cubierta con bóveda de cañón revestida exteriormente de azulejos. La puerta es rectangular, con dintel de madera. Preside la fachada un campanario de espadaña hecho con ladrillos.",
+    "descCorta":"Situada en la loma de las Ermitas, en la cima de una colina",
+    "latitud":"41.470177",
+    "longitud":"2.213754",
+    "fotos":["ErmitaSantCliment.jpg","ErmitaSantCliment1.jpg"]
+
+  },
+  {
+    "nombre":"Ermita de Sant Onofre",
+    "descLarga":"La ermita de San Onofre, en la Cordillera Litoral dentro del término de Santa Coloma de Gramanet, en la Loma de las Ermitas. Se puede llegar por el camino que sale del Coll de Vallensana o lo que pasa por el Coll de Puig Castellar, desde Santa Coloma de Gramanet. Tiene planta rectangular, ábside recto y cubierta con tejado a dos aguas. El portal es adovelado, de punto redondo. Hay una ventana de medio punto adornada en la fachada y otra más sencilla la cabecera.",
+    "descCorta":"Situada en la loma de las Ermitas, en la cima de una colina",
+    "latitud":"41.473503",
+    "longitud":"2.217170",
+    "fotos":["ErmitaSantOnofre.jpg","ErmitaSantOnofre1.jpg"]
+
+  },
+  {
+    "nombre":"Mas Fonollar",
+    "descLarga":"Esta masía fue construida antes del siglo XIV y era el centro de una heredad agrícola. Su nombre proviene de sus amos del siglo XIX, el Funullà o Fonollar. El edificio es la típica masía catalana de planta baja y piso superior con tejado de doble vertiente. La masía fue reformada en 1982 y transformada en un Centro de Recursos para Jóvenes. En 2005 sufrió un incendio, con lo que fue cerrada y vuelta a reformar un año más tarde.",
+    "descCorta":"Antigua masía utilizada actualmente como Centro de Recursos para Jóvenes",
+    "latitud":"41.453739",
+    "longitud":"2.205987",
+    "fotos":["MasFonollar.jpg"]
+
+  },
+  {
+    "nombre":"Can Mariner",
+    "descLarga":"Can Mariner es una masía campesina del siglo XVIII con añadidos posteriores convertida ahora en un centro civico. Su nombre proviene de su propietario del siglo XIX, Francisco Salvatella, llamado el Marinero. Está formada por un cuerpo central de planta baja y primer piso y una torre de tres pisos, con ventanas distribuidas de forma asimétrica.",
+    "descCorta":"Masía campesina del siglo XVIII convertida ahora en un centro civico",
+    "latitud":"41.448389",
+    "longitud":"2.211881",
+    "fotos":["CanMariner.jpg", "CanMariner1.jpg"]
+
+  },
+  {
+    "nombre":"Recinto Torribera",
+    "descLarga":"El conjunto está situado en los terrenos de la masía de Torribera, situada en el valle Carcereny. En 1916, la Diputación de Barcelona adquirió estos terrenos para construir un sanatorio mental, aún vigente. Viven 2000 personas aproximadamente. El proyecto fue llevado a cabo por los arquitectos Josep Maria Pericas y Rafael Masó de acuerdo con los valores novecentistas. Está formado por cinco pabellones aislados, la portería y la casa del director. El conjunto está ideado como una ciudad jardín estructurado en función de la topografía del terreno. Posteriormente se han añadido otros pabellones de estilo completamente diferentes. Además, hoy en día también es un campus universitario con sede de la Universidad de Barcelona, de la Universidad Autónoma de Barcelona y de la UNED.",
+    "descCorta":"Recinto que alberga actualmente un sanatorio mental y un campus universitario ",
+    "latitud":"41.465071",
+    "longitud":"2.211844",
+    "fotos":["Torribera.jpg","Torribera1.jpg","Torribera2.jpg"]
+
+  },
+  {
+  "nombre":"Iglesia de Torribera",
+  "descLarga":"Es una capilla neorrománica, con un campanario poligonal coronado por un airoso pináculo.",
+  "descCorta":"Capilla situada en el recinto de Torribera",
+  "latitud":"41.462523",
+  "longitud":"2.214672",
+  "fotos":["IglesiaTorribera.jpg","IglesiaTorribera1.jpg"]
+
+  },
+  {
+    "nombre":"Monasterio de San Jerónimo de la Murtra",
+    "descLarga":"El monasterio de San Jerónimo de la Murtra es un antiguo cenobio de la Orden Jerónima construido en estilo gótico a principios del siglo XV. Se emplaza en el entorno natural de la Sierra de la Marina Durante los siglos XV y XVI se edificaron las partes más importantes y dispuso de una gran biblioteca.​ Su prior Pere Benejam fue consejero de los reyes y de los duques de Cardona. Los jerónimos mantuvieron desocupado el Monasterio entre 1811 y 1820. Con motivo de la Desamortización de Mendizábal de 1835, fue exclaustrado, asaltado e incendiado. Tras muchas décadas de abandono y de cambios de propietarios, San Jerónimo de la Murtra fue declarado Monumento Histórico-Artístico de interés nacional el 20 de diciembre de 1974.",
+    "descCorta":"Monasterio de la Orden Jerónima situado en el entorno natural de la Sierra de la Marina",
+    "latitud":"41.469980",
+    "longitud":"2.220880",
+    "fotos":["SanJeronimo.jpg","SanJeronimo1.jpg","SanJeronimo2.jpg"]
+
+  },
+  {
+    "nombre":"La A de Anarquía de Can Franquesa",
+    "descLarga":"La A de Can Franquesa es un símbolo anarquista de 6,5 metros de alto pintado sobre un muro de contención de tierras en el barrio de Can Franquesa de Santa Coloma de Gramenet. Esta se dibujó en 1979 entre cinco miembros de las juventudes libertarias de Santa Coloma de Gramenet. Estuvieron pintando 4 días utilizando equipos de escalada para poder terminarla el día 12 de octubre. La A se dibujó el día 12 de octubre de 1979, la fiesta de la Hispanidad. -Lo hicimos porque lo que nosotros queríamos celebrar era la libertad, y no la hispanidad.- El dibujo fue restaurado el 12 de Octubre de 2012 por 4 de sus mismos autores. Este es uno de los lugares más emblemáticos y reconocibles de la ciudad. Pudiéndose ver desde diferentes barrios obreros de Barcelona, representa el carácter combativo y trabajador de su gente. En estos más de treinta años, ningún ayuntamiento, ningún alcalde, nadie ha osado borrarla. Junto a ella han crecido otros murales. Uno, del artista Milú, contra la línea de Muy Alta Tensión, y otro en recuerdo de Pedro P., un grafitero que murió arrollado por un tren cuando le perseguían por pintar.",
+    "descCorta":"Símbolo anarquista de 6,5 metros de alto pintado en el barrio de Can Franquesa",
+    "latitud":"41.464676",
+    "longitud":"2.203033",
+    "fotos":["Anarquia.jpg","Anarquia2.jpg"]
+
+  },
+  {
+    "nombre":"CTPC Joan Peiró",
+    "descLarga":"El edificio que antes albergaba la escuela Manent, ahora es el CTPC (Centre de Tradicions Populars Catalanes) de Santa Coloma de Gramenet. En este espacio las entidades culturales de la ciudad como Castellers de Santa Coloma de Gramenet, Bruixes de Gramenet, Draconaires, etc.,  guardan sus equipos, tienen sus reuniones y sus ensayos.",
+    "descCorta":"Centre de Tradicions Populars Catalanes de Santa Coloma de Gramenet",
+    "latitud":"41.453808",
+    "longitud":"2.207065",
+    "fotos":[]
+
+  },
+  {
+    "nombre":"Plaça del Rellotge",
+    "descLarga":"Esta plaza es uno de los centros de la vida social de la ciudad, en concreto, del barrio de Fondo. Aquí se celebran numerosos eventos como trobadas castelleras, conciertos, correfocs, etc. Periódicamente se levanta un mercadillo en esta plaza.",
+    "descCorta":"Esta plaza es uno de los centros de la vida social de la ciudad",
+    "latitud":"41.449892",
+    "longitud":"2.219003",
+    "fotos":["PlazaRellotge.jpg", "PlazaRellotge1.jpg"]
+
+  },
+  {
+    "nombre":"Plaça de Montserrat Roig (Safareigs)",
+    "descLarga":"La plaza fue condicionada en 2006 y respeta los restos de un antiguo lavadero gracias a dos coberturas de vidrio sobre plataformas de material cerámico que permiten ver la antigua estructura. En la misma zona estaba la masía de Can Bachs, derribada en 2002. El espacio está dedicado a la escritora catalana Montserrat Roig. El antiguo lavadero era un edificio rectangular semi enterrado de 87,5 m² construido en 1868 por el Ayuntamiento. Se han conservado la balsa central y el sistema de canalización de agua. La balsa estaba dividida en dos mitades: una para enjabonar la ropa y otra para enjuagarla. Además, tenía una estructura de piedras inclinadas para facilitar la postura a la hora de lavar. Entre los años 2002 y 2003 la zona fue reurbanizada y se procedió a excavar los restos del antiguo lavadero. La estructura original aprovechaba el agua de un pequeño torrente que llegaba hasta la mina de Regants y que daría nombre al Carrer del safareig (Calle del lavadero).",
+    "descCorta":"Espacio creado sobre los antiguos lavaderos dedicado a la escritora catalana Montserrat Roig",
+    "latitud":"41.453894",
+    "longitud":"2.205625",
+    "fotos":["MontserratRoig.jpg","MontserratRoig1.jpg"]
+
+  }
+
+]
+
+

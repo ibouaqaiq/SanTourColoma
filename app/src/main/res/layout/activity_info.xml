@@ -1,30 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".View.InfoActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:textSize="50dp" />
+            android:id="@+id/titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:hint="Ayuntamiento de Santa Coloma"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textAlignment="center"/>
 
-        <ImageView
-            android:layout_width="300dp"
-            android:layout_height="200dp" />
+        <android.support.v4.view.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="100dp">
 
+        </android.support.v4.view.ViewPager>
         <TextView
+            android:id="@+id/longDesc"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="400dp"
+            android:hint="El primer núcleo de edificios, conocido como Casa de la Villa o Ayuntamiento Nuevo, data del año 1886 y constaba de las dependencias del gobierno municipal, junto con el juzgado-prisión y una escuela.
 
-    </LinearLayout>
+La plaza de la Vila, con su correspondiente urbanización, surge a finales del s. XIX en los terrenos de la desaparecida masía de Can Pascali.
+"/>
 
-</android.support.constraint.ConstraintLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>

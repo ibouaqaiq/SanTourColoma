@@ -1,6 +1,10 @@
 package com.example.issam.santourcoloma.View;
 
 import android.content.Intent;
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -29,6 +33,7 @@ import com.example.issam.santourcoloma.R;
 import com.firebase.ui.auth.AuthUI;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -37,6 +42,19 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.TreeMap;
+import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -55,6 +73,8 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
 
         //barra transparente
         Window w= getWindow();
@@ -116,15 +136,10 @@ public class MainActivity extends AppCompatActivity
 
         getSupportFragmentManager().beginTransaction().replace(R.id.mainLayout, new MapsFragment()).commit();
 
-        loadSitios();
-    }
-
-    void loadSitios(){
-        String key = mDatabase.child("sitios/data").push().getKey();
-        mDatabase.child("sitios/data").child(key).setValue(new Sitio("Ayunta",4,"el ayntamienttoooo", "45.45845345", "2.3244324"));
-        mDatabase.child("sitios/all").child(key).setValue(true);
+        //new Thread(() -> uploadSitios()).start();
 
     }
+
 
 
     @Override
@@ -189,6 +204,77 @@ public class MainActivity extends AppCompatActivity
                     }
                 });
     }
+
+    String loadSitiosJSON() {
+        String json="{dsgag: d a}";
+        try {
+            InputStream in = getAssets().open("sitios.json");
+            int size = in.available();
+
+            byte[] buffer = new byte[size];
+            in.read(buffer);
+            in.close();
+
+            json = new String(buffer, "UTF-8");
+        }catch(Exception e) {
+
+        }
+        return json;
+    }
+
+    void uploadSitios(){
+        try {
+            JSONArray jsonArray = new JSONArray(loadSitiosJSON());
+            for (int i = 0; i < jsonArray.length(); i++) {
+
+                JSONObject sitio = jsonArray.getJSONObject(i);
+                System.out.println("AAA SITIOOOOOOO " + sitio.getString("nombre"));
+
+                String key = mDatabase.child("sitios/data").push().getKey();
+                System.out.println("AAA key " + key);
+                mDatabase.child("sitios/data").child(key).setValue(
+                        new Sitio(sitio.getString("nombre"),
+                                sitio.getString("descCorta"),
+                                sitio.getString("descLarga"),
+                                sitio.getString("latitud"),
+                                sitio.getString("longitud")));
+                mDatabase.child("sitios/all").child(key).setValue(true);
+
+                JSONArray fotos =sitio.getJSONArray("fotos");
+
+                System.out.println("AAA aquiii recorrer");
+                for (int j = 0; j < fotos.length(); j++) {
+                    Thread.sleep(1000);
+
+                    final int jj =j;
+                    String ficheroFoto = fotos.getString(j);
+                    System.out.println("AAA FOTOS ->" + ficheroFoto);
+                    StorageReference ruta = FirebaseStorage.getInstance().getReference().child("/imagenes/" + UUID.randomUUID().toString() + ficheroFoto);
+                    InputStream inputStream = getAssets().open("ImagenesSitios/" + ficheroFoto);
+
+                    Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+                    ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                    bitmap.compress(Bitmap.CompressFormat.JPEG,100, outputStream);
+                    UploadTask uploadTask = ruta.putBytes(outputStream.toByteArray());
+
+                    //UploadTask uploadTask = ruta.putStream(inputStream);
+
+                    uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            Uri downloadUrl = taskSnapshot.getDownloadUrl();
+                            System.out.println("AAA subida foto " + downloadUrl);
+                            mDatabase.child("sitios/data").child(key).child("imagenes").child(String.valueOf(jj)).setValue(downloadUrl);
+                        }
+                    });
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }
 
 

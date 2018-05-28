@@ -1,20 +1,24 @@
 package com.example.issam.santourcoloma.Fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ImageView;
 
 import com.example.issam.santourcoloma.Model.Sitio;
 import com.example.issam.santourcoloma.R;
+import com.example.issam.santourcoloma.View.InfoActivity;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
@@ -81,7 +85,7 @@ public abstract class SitiosFragment extends Fragment {
 
                 }
 
-                viewHolder.favLayout.setOnClickListener(v -> {
+                viewHolder.fav.setOnClickListener(v -> {
                     String uid = FirebaseAuth.getInstance().getUid();
                     String postKey1 = getRef(position).getKey();
                     if(sitio.fav != null && sitio.fav.containsKey(uid)){
@@ -94,6 +98,28 @@ public abstract class SitiosFragment extends Fragment {
                     }
                 });
 
+                if(sitio.flag!= null && sitio.flag.containsKey(FirebaseAuth.getInstance().getUid())){
+                    viewHolder.flag.setImageResource(R.drawable.flag_on);
+                } else  {
+                    viewHolder.flag.setImageResource(R.drawable.flag_off);
+
+                }
+
+                viewHolder.flag.setOnClickListener(v -> {
+                    String uid = FirebaseAuth.getInstance().getUid();
+                    String postKey1 = getRef(position).getKey();
+                    if(sitio.flag != null && sitio.flag.containsKey(uid)){
+                        mReference.child("sitios/data").child(getRef(position).getKey()).child("flag").child(FirebaseAuth.getInstance().getUid()).setValue(null);
+                        mReference.child("sitios/visitados").child(uid).child(postKey1).setValue(null);
+                    } else{
+                        mReference.child("sitios/data").child(getRef(position).getKey()).child("flag").child(FirebaseAuth.getInstance().getUid()).setValue(true);
+                        mReference.child("sitios/visitados").child(uid).child(postKey1).setValue(true);
+
+                    }
+                });
+
+
+
 
                 viewHolder.short_desc.setText(sitio.shortDesc);
 
@@ -105,8 +131,10 @@ public abstract class SitiosFragment extends Fragment {
         TextView nombresitio;
         ImageView fotositio;
         ImageView fav;
+        ImageView flag;
         TextView short_desc;
-        RelativeLayout favLayout;
+        //LinearLayout favLayout;
+        //LinearLayout flagLayout;
 
 
         SitioViewHolder(View view){
@@ -115,8 +143,9 @@ public abstract class SitiosFragment extends Fragment {
             fotositio = view.findViewById(R.id.fotositio);
             fav = view.findViewById(R.id.fav);
             short_desc = view.findViewById(R.id.shortDesc);
-            favLayout = view.findViewById(R.id.favLayout);
-
+          //  favLayout = view.findViewById(R.id.favLayout);
+            flag = view.findViewById(R.id.flag);
+            //flagLayout = view.findViewById(R.id.flagLayout);
         }
 
     }
