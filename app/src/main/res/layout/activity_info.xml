@@ -9,34 +9,32 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
+        android:id="@+id/info_rel"
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/titulo"
+            android:id="@+id/info_titulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:hint="Ayuntamiento de Santa Coloma"
             android:textSize="20dp"
+            android:text="ss"
             android:textStyle="bold"
             android:textColor="#000000"
             android:textAlignment="center"/>
 
         <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginTop="100dp">
 
         </android.support.v4.view.ViewPager>
         <TextView
-            android:id="@+id/longDesc"
+            android:id="@+id/info_longDesc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="400dp"
-            android:hint="El primer núcleo de edificios, conocido como Casa de la Villa o Ayuntamiento Nuevo, data del año 1886 y constaba de las dependencias del gobierno municipal, junto con el juzgado-prisión y una escuela.
-
-La plaza de la Vila, con su correspondiente urbanización, surge a finales del s. XIX en los terrenos de la desaparecida masía de Can Pascali.
-"/>
+            android:layout_marginTop="400dp"/>
 
     </RelativeLayout>
 

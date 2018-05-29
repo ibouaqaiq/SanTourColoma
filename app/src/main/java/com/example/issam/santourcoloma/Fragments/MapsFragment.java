@@ -2,6 +2,7 @@ package com.example.issam.santourcoloma.Fragments;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 
 import com.example.issam.santourcoloma.Model.Sitio;
 import com.example.issam.santourcoloma.R;
+import com.example.issam.santourcoloma.View.InfoActivity;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -22,6 +24,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -74,7 +77,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        supportMapFragment.onDestroy();
+        //supportMapFragment.onDestroy();
     }
 
     @Override
@@ -106,6 +109,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
             }
         });
 
+
         // Add a marker in Sydney and move the camera
         LatLng santaColoma = new LatLng(41.452808, 2.208545);
         LatLng ayuntamientoSntk = new LatLng(41.452101, 2.207929);
@@ -129,4 +133,6 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(camera));
         //mMap.moveCamera(CameraUpdateFactory.newLatLng(santaColoma));
     }
+
+
 }

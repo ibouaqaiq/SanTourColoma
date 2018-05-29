@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity
 
         getSupportFragmentManager().beginTransaction().replace(R.id.mainLayout, new MapsFragment()).commit();
 
-        //new Thread(() -> uploadSitios()).start();
+      //new Thread(() -> uploadSitios()).start();
 
     }
 
@@ -197,11 +197,9 @@ public class MainActivity extends AppCompatActivity
     void signOut(){
         AuthUI.getInstance()
                 .signOut(this)
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    public void onComplete(@NonNull Task<Void> task) {
-                        startActivity(new Intent(MainActivity.this, LoginActivity.class));
-                        finish();
-                    }
+                .addOnCompleteListener(task -> {
+                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                    finish();
                 });
     }
 
@@ -259,13 +257,10 @@ public class MainActivity extends AppCompatActivity
 
                     //UploadTask uploadTask = ruta.putStream(inputStream);
 
-                    uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            Uri downloadUrl = taskSnapshot.getDownloadUrl();
-                            System.out.println("AAA subida foto " + downloadUrl);
-                            mDatabase.child("sitios/data").child(key).child("imagenes").child(String.valueOf(jj)).setValue(downloadUrl);
-                        }
+                    uploadTask.addOnSuccessListener(taskSnapshot -> {
+                        Uri downloadUrl = taskSnapshot.getDownloadUrl();
+                        System.out.println("AAA subida foto " + downloadUrl);
+                        mDatabase.child("sitios/data").child(key).child("imagenes").child(String.valueOf(jj)).setValue(downloadUrl);
                     });
                 }
             }

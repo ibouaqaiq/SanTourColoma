@@ -45,8 +45,6 @@ public abstract class SitiosFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_sitios, container, false);
-        mReference = FirebaseDatabase.getInstance().getReference();
-
 
         recyclerView = view.findViewById(R.id.recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -105,7 +103,7 @@ public abstract class SitiosFragment extends Fragment {
 
                 }
 
-                viewHolder.flag.setOnClickListener(v -> {
+                viewHolder.flag.setOnClickListener((View v) -> {
                     String uid = FirebaseAuth.getInstance().getUid();
                     String postKey1 = getRef(position).getKey();
                     if(sitio.flag != null && sitio.flag.containsKey(uid)){
@@ -118,6 +116,17 @@ public abstract class SitiosFragment extends Fragment {
                     }
                 });
 
+                viewHolder.nombresitio.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        Intent i = new Intent(getActivity(), InfoActivity.class);
+                        i.putExtra("id","1234");
+                        i.putExtra("info",sitio);
+                        startActivity(i);
+
+                    }
+                });
 
 
 
@@ -146,6 +155,7 @@ public abstract class SitiosFragment extends Fragment {
           //  favLayout = view.findViewById(R.id.favLayout);
             flag = view.findViewById(R.id.flag);
             //flagLayout = view.findViewById(R.id.flagLayout);
+
         }
 
     }

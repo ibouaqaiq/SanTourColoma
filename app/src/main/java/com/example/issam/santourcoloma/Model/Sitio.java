@@ -2,9 +2,10 @@ package com.example.issam.santourcoloma.Model;
 
 import android.widget.RelativeLayout;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class Sitio {
+public class Sitio implements Serializable {
     public String nombreSitio;
     public HashMap<String,Boolean> fav;
     public HashMap<String,Boolean> flag;
