@@ -242,7 +242,7 @@ public class MainActivity extends AppCompatActivity
 
                 System.out.println("AAA aquiii recorrer");
                 for (int j = 0; j < fotos.length(); j++) {
-                    Thread.sleep(1000);
+                    //Thread.sleep(10000);
 
                     final int jj =j;
                     String ficheroFoto = fotos.getString(j);
@@ -258,7 +258,7 @@ public class MainActivity extends AppCompatActivity
                     //UploadTask uploadTask = ruta.putStream(inputStream);
 
                     uploadTask.addOnSuccessListener(taskSnapshot -> {
-                        Uri downloadUrl = taskSnapshot.getDownloadUrl();
+                        String downloadUrl = taskSnapshot.getDownloadUrl().toString();
                         System.out.println("AAA subida foto " + downloadUrl);
                         mDatabase.child("sitios/data").child(key).child("imagenes").child(String.valueOf(jj)).setValue(downloadUrl);
                     });

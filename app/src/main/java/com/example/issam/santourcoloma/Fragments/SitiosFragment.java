@@ -16,15 +16,19 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.example.issam.santourcoloma.Model.Sitio;
 import com.example.issam.santourcoloma.R;
 import com.example.issam.santourcoloma.View.InfoActivity;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,6 +36,7 @@ import com.google.firebase.database.Query;
 public abstract class SitiosFragment extends Fragment {
     DatabaseReference mReference;
 
+    DatabaseReference mReferenceFotos;
 
     RecyclerView recyclerView;
 
@@ -50,6 +55,9 @@ public abstract class SitiosFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         recyclerView.setAdapter(getAdapter());
+
+        mReference = FirebaseDatabase.getInstance().getReference();
+
 
         return view;
     }
@@ -85,13 +93,13 @@ public abstract class SitiosFragment extends Fragment {
 
                 viewHolder.fav.setOnClickListener(v -> {
                     String uid = FirebaseAuth.getInstance().getUid();
-                    String postKey1 = getRef(position).getKey();
+
                     if(sitio.fav != null && sitio.fav.containsKey(uid)){
-                        mReference.child("sitios/data").child(getRef(position).getKey()).child("fav").child(FirebaseAuth.getInstance().getUid()).setValue(null);
-                        mReference.child("sitios/favoritos").child(uid).child(postKey1).setValue(null);
+                        mReference.child("sitios/data").child(postKey).child("fav").child(uid).setValue(null);
+                        mReference.child("sitios/favoritos").child(uid).child(postKey).setValue(null);
                     } else{
-                        mReference.child("sitios/data").child(getRef(position).getKey()).child("fav").child(FirebaseAuth.getInstance().getUid()).setValue(true);
-                        mReference.child("sitios/favoritos").child(uid).child(postKey1).setValue(true);
+                        mReference.child("sitios/data").child(postKey).child("fav").child(uid).setValue(true);
+                        mReference.child("sitios/favoritos").child(uid).child(postKey).setValue(true);
 
                     }
                 });
@@ -105,13 +113,12 @@ public abstract class SitiosFragment extends Fragment {
 
                 viewHolder.flag.setOnClickListener((View v) -> {
                     String uid = FirebaseAuth.getInstance().getUid();
-                    String postKey1 = getRef(position).getKey();
                     if(sitio.flag != null && sitio.flag.containsKey(uid)){
-                        mReference.child("sitios/data").child(getRef(position).getKey()).child("flag").child(FirebaseAuth.getInstance().getUid()).setValue(null);
-                        mReference.child("sitios/visitados").child(uid).child(postKey1).setValue(null);
+                        mReference.child("sitios/data").child(postKey).child("flag").child(uid).setValue(null);
+                        mReference.child("sitios/visitados").child(uid).child(postKey).setValue(null);
                     } else{
-                        mReference.child("sitios/data").child(getRef(position).getKey()).child("flag").child(FirebaseAuth.getInstance().getUid()).setValue(true);
-                        mReference.child("sitios/visitados").child(uid).child(postKey1).setValue(true);
+                        mReference.child("sitios/data").child(postKey).child("flag").child(uid).setValue(true);
+                        mReference.child("sitios/visitados").child(uid).child(postKey).setValue(true);
 
                     }
                 });
@@ -128,7 +135,12 @@ public abstract class SitiosFragment extends Fragment {
                     }
                 });
 
-
+                if(sitio.imagenes != null){
+                    viewHolder.fotositio.setVisibility(View.VISIBLE);
+                    Glide.with(SitiosFragment.this.getActivity())
+                            .load(sitio.imagenes.get(0))
+                            .into(viewHolder.fotositio);
+                }
 
                 viewHolder.short_desc.setText(sitio.shortDesc);
 

@@ -3,6 +3,7 @@ package com.example.issam.santourcoloma.Model;
 import android.widget.RelativeLayout;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Sitio implements Serializable {
@@ -12,7 +13,7 @@ public class Sitio implements Serializable {
     public String shortDesc;
     public String longDesc;
     public String latitud, longitud;
-    HashMap<String, Boolean> imagenes;
+    public ArrayList<String> imagenes;
 
 
     public Sitio(){}
