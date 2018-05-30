@@ -1,6 +1,7 @@
 package com.example.issam.santourcoloma.Fragments;
 
 
+import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.location.LocationManager;
@@ -12,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.issam.santourcoloma.Model.Sitio;
 import com.example.issam.santourcoloma.R;
@@ -101,13 +103,29 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
                     marker.icon(BitmapDescriptorFactory.fromResource(android.R.drawable.star_on));
                     mMap.addMarker(marker);
 
+                    googleMap.setOnInfoWindowClickListener(marker1 -> {
+                        Toast.makeText(mContext, "->"+marker1.getTitle(), Toast.LENGTH_SHORT).show();
+
+                        dataSnapshot.getChildren().forEach(items -> {
+                            if (items.getValue(Sitio.class).nombreSitio.equals(marker1.getTitle())){
+
+                                Intent i = new Intent(getActivity(), InfoActivity.class);
+                                i.putExtra("info", items.getValue(Sitio.class));
+                                startActivity(i);
+                            }
+
+                        });
+                    });
+
                 });
             }
+
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
         });
+
 
 
         // Add a marker in Sydney and move the camera

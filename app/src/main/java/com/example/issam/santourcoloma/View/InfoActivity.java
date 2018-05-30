@@ -1,5 +1,6 @@
 package com.example.issam.santourcoloma.View;
 
+import android.icu.text.IDNA;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,8 +10,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.example.issam.santourcoloma.Adapter.IRVAdapter;
 import com.example.issam.santourcoloma.Model.Sitio;
 import com.example.issam.santourcoloma.R;
 import com.google.firebase.database.DataSnapshot;
@@ -22,12 +26,9 @@ import com.google.firebase.database.ValueEventListener;
 public class InfoActivity extends AppCompatActivity {
 
     TextView titulo;
-    ViewPager viewPager;
     TextView longDesc;
-
-    DatabaseReference mReference;
-
     String nombre,description;
+    RecyclerView imageRV;
 
 
     @Override
@@ -35,11 +36,20 @@ public class InfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
-        mReference = FirebaseDatabase.getInstance().getReference();
-        titulo = findViewById(R.id.info_titulo);
-        viewPager = findViewById(R.id.viewPager);
-        longDesc = findViewById(R.id.info_longDesc);
+
+
+
         Sitio sitio = (Sitio) getIntent().getSerializableExtra("info");
+
+        titulo = findViewById(R.id.info_titulo);
+        longDesc = findViewById(R.id.info_longDesc);
+        imageRV =findViewById(R.id.imageRecyclerView);
+
+        LinearLayoutManager llm =  new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.HORIZONTAL,false);
+        imageRV.setLayoutManager(llm);
+        IRVAdapter adapter = new IRVAdapter(sitio.imagenes,getApplicationContext());
+        imageRV.setAdapter(adapter);
+
         if (sitio!=null) {
             nombre = sitio.nombreSitio;
             description=sitio.longDesc;
@@ -48,8 +58,11 @@ public class InfoActivity extends AppCompatActivity {
             description="no hay datos";
         }
 
-            titulo.setText(nombre);
-            longDesc.setText(description);
+        titulo.setText(nombre);
+        longDesc.setText(description);
+
+
+
 
 
 

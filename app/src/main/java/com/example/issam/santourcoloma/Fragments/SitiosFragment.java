@@ -123,16 +123,12 @@ public abstract class SitiosFragment extends Fragment {
                     }
                 });
 
-                viewHolder.nombresitio.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                viewHolder.cv.setOnClickListener(v -> {
 
-                        Intent i = new Intent(getActivity(), InfoActivity.class);
-                        i.putExtra("id","1234");
-                        i.putExtra("info",sitio);
-                        startActivity(i);
+                    Intent i = new Intent(getActivity(), InfoActivity.class);
+                    i.putExtra("info",sitio);
+                    startActivity(i);
 
-                    }
                 });
 
                 if(sitio.imagenes != null){
@@ -154,6 +150,7 @@ public abstract class SitiosFragment extends Fragment {
         ImageView fav;
         ImageView flag;
         TextView short_desc;
+        CardView cv;
         //LinearLayout favLayout;
         //LinearLayout flagLayout;
 
@@ -164,9 +161,8 @@ public abstract class SitiosFragment extends Fragment {
             fotositio = view.findViewById(R.id.fotositio);
             fav = view.findViewById(R.id.fav);
             short_desc = view.findViewById(R.id.shortDesc);
-          //  favLayout = view.findViewById(R.id.favLayout);
             flag = view.findViewById(R.id.flag);
-            //flagLayout = view.findViewById(R.id.flagLayout);
+            cv = view.findViewById(R.id.cv);
 
         }
 
