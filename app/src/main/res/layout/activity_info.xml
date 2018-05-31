@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     tools:context=".View.InfoActivity">
 
     <LinearLayout
@@ -20,7 +21,7 @@
             android:layout_marginTop="40dp"
             android:text="ss"
             android:textAlignment="center"
-            android:textColor="#000"
+            android:textColor="#ffffff"
             android:textSize="20dp"
             android:textStyle="bold" />
 
@@ -40,7 +41,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="20dp"
-            android:textColor="#000"
+            android:textColor="#ffffff"
             android:textSize="15dp"
             />
 
