@@ -79,14 +79,12 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        //supportMapFragment.onDestroy();
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
         mMap = googleMap;
-        //mMap.setMaxZoomPreference(15);
         mMap.setMinZoomPreference(14.0f);
 
         FirebaseDatabase.getInstance().getReference().child("sitios/data").addValueEventListener(new ValueEventListener() {
@@ -104,8 +102,6 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
                     mMap.addMarker(marker);
 
                     googleMap.setOnInfoWindowClickListener(marker1 -> {
-                        Toast.makeText(mContext, "->"+marker1.getTitle(), Toast.LENGTH_SHORT).show();
-
                         dataSnapshot.getChildren().forEach(items -> {
                             if (items.getValue(Sitio.class).nombreSitio.equals(marker1.getTitle())){
 
@@ -126,13 +122,8 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
             }
         });
 
-
-
-        // Add a marker in Sydney and move the camera
         LatLng santaColoma = new LatLng(41.452808, 2.208545);
         LatLng ayuntamientoSntk = new LatLng(41.452101, 2.207929);
-
-        //mMap.addMarker(new MarkerOptions().position(santaColoma).title("Marker in SantaColoma"));
 
         marker = new MarkerOptions();
         marker.position(ayuntamientoSntk);
@@ -149,7 +140,6 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
                 .build();
 
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(camera));
-        //mMap.moveCamera(CameraUpdateFactory.newLatLng(santaColoma));
     }
 
 

@@ -60,11 +60,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private FirebaseAuth firebaseAuth;
-
-    private TextView nameNav;
-    private TextView correoNav;
     private DatabaseReference mDatabase;
-
 
 
     @Override
@@ -93,9 +89,6 @@ public class MainActivity extends AppCompatActivity
             startActivity(new Intent(this, LoginActivity.class));
         }
 
-        //FirebaseUser user = firebaseAuth.getCurrentUser();
-
-
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -108,7 +101,6 @@ public class MainActivity extends AppCompatActivity
 
         /* Load user info in drawer header*/
         View header = navigationView.getHeaderView(0);
-//        ImageView photo = header.findViewById(R.id.userPhoto);
         final TextView nameNav = header.findViewById(R.id.nameNav);
         final TextView correoNav = header.findViewById(R.id.correoNav);
 
@@ -117,10 +109,6 @@ public class MainActivity extends AppCompatActivity
             public void onDataChange(DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
                 if(user != null) {
-                    //        Glide.with(this)
-//                .load(FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl().toString())
-//                .apply(new RequestOptions().circleCrop())
-//                .into(photo);
                     nameNav.setText(user.displayName);
                     correoNav.setText(user.email);
                 }
@@ -136,6 +124,7 @@ public class MainActivity extends AppCompatActivity
 
         getSupportFragmentManager().beginTransaction().replace(R.id.mainLayout, new MapsFragment()).commit();
 
+      //METODO PARA SUBIR TODOS LOS DATOS AL FIREBASE:
       //new Thread(() -> uploadSitios()).start();
 
     }
@@ -164,12 +153,6 @@ public class MainActivity extends AppCompatActivity
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }

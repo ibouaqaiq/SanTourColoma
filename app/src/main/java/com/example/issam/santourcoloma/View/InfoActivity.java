@@ -36,9 +36,6 @@ public class InfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
-
-
-
         Sitio sitio = (Sitio) getIntent().getSerializableExtra("info");
 
         titulo = findViewById(R.id.info_titulo);
@@ -60,11 +57,6 @@ public class InfoActivity extends AppCompatActivity {
 
         titulo.setText(nombre);
         longDesc.setText(description);
-
-
-
-
-
 
     }
 }

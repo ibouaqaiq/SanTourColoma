@@ -1,24 +1,18 @@
 package com.example.issam.santourcoloma.View;
 
-import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.issam.santourcoloma.Model.User;
 import com.example.issam.santourcoloma.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -39,8 +33,6 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,13 +46,10 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
         }
 
 
-        firebaseAuthListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                if (user != null) {
-                    System.out.println("");
-                }
+        firebaseAuthListener = firebaseAuth -> {
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            if (user != null) {
+                System.out.println("");
             }
         };
 
@@ -74,8 +63,6 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
 
         unirse.setOnClickListener(this);
         yaRegistrado = findViewById(R.id.yaRegistrado);
-
-
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
@@ -122,29 +109,23 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
         progressDialog.setMessage("Registrando Usuario...");
         progressDialog.show();
 
-
-
          firebaseAuth.createUserWithEmailAndPassword(email,passwordIn)
-                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                     @Override
-                     public void onComplete(@NonNull Task<AuthResult> task) {
-                         if(task.isSuccessful()){
-                             onAuthSuccess(task.getResult().getUser());
-                             finish();
-                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                 .addOnCompleteListener(this, task -> {
+                     if(task.isSuccessful()){
+                         onAuthSuccess(task.getResult().getUser());
+                         finish();
+                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
 
-                         }else{
-                             Toast.makeText(RegistroActivity.this, "No se ha podido registrar... Intentalo de nuevo", Toast.LENGTH_SHORT).show();
-                         }
-                         progressDialog.dismiss();
+                     }else{
+                         Toast.makeText(RegistroActivity.this, "No se ha podido registrar... Intentalo de nuevo", Toast.LENGTH_SHORT).show();
                      }
+                     progressDialog.dismiss();
                  });
-
 
         }
 
         private void onAuthSuccess(FirebaseUser user) {
-          //  User newUser = new User(user.getUid();
+
             String dName = displayName.getText().toString();
             String email = mailIn.getText().toString();
             mDatabase.child("users").child(user.getUid()).setValue(new User(user.getUid(), dName, email));

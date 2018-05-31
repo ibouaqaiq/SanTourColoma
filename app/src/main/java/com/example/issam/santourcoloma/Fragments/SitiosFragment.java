@@ -36,10 +36,7 @@ import com.google.firebase.database.ValueEventListener;
 public abstract class SitiosFragment extends Fragment {
     DatabaseReference mReference;
 
-    DatabaseReference mReferenceFotos;
-
     RecyclerView recyclerView;
-
 
     public SitiosFragment() {
         // Required empty public constructor
@@ -82,7 +79,6 @@ public abstract class SitiosFragment extends Fragment {
 
                 System.out.println("SITIOOOOOO " + sitio.nombreSitio);
                 viewHolder.nombresitio.setText(sitio.nombreSitio);
-                //viewHolder.fotositio.setText(sitio.fotoSitioId);
 
                 if(sitio.fav!= null && sitio.fav.containsKey(FirebaseAuth.getInstance().getUid())){
                     viewHolder.fav.setImageResource(R.drawable.heart_on);
@@ -151,9 +147,6 @@ public abstract class SitiosFragment extends Fragment {
         ImageView flag;
         TextView short_desc;
         CardView cv;
-        //LinearLayout favLayout;
-        //LinearLayout flagLayout;
-
 
         SitioViewHolder(View view){
             super(view);
@@ -163,7 +156,6 @@ public abstract class SitiosFragment extends Fragment {
             short_desc = view.findViewById(R.id.shortDesc);
             flag = view.findViewById(R.id.flag);
             cv = view.findViewById(R.id.cv);
-
         }
 
     }

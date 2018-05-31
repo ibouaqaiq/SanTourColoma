@@ -62,21 +62,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
        entrarManual.setOnClickListener(this);
 
-        findViewById(R.id.sign_in).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                signIn();
-            }
-        });
-        findViewById(R.id.registrobtn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goRegister();
-            }
-        });
+        findViewById(R.id.sign_in).setOnClickListener(view -> signIn());
+        findViewById(R.id.registrobtn).setOnClickListener(v -> goRegister());
         comeIn();
-
-
     }
 
 
